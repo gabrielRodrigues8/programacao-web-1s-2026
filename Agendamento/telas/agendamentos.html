@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Sucesso</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; max-width: 600px; margin: auto; }
+        .card { border: 1px solid #ccc; padding: 20px; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Agendamento Confirmado!</h1>
+    <div class="card">
+        <h2>Dados do Paciente</h2>
+        <p><strong>Nome:</strong> {{NOME}} {{SOBRENOME}}</p>
+        <p><strong>CPF:</strong> {{CPF}}</p>
+        <p><strong>Data de Nascimento:</strong> {{DATA_NASCIMENTO}}</p>
+        <p><strong>Telefone:</strong> {{TELEFONE}}</p>
+        <p><strong>Endereço:</strong> {{ENDERECO}} - CEP: {{CEP}}</p>
+        <hr>
+        <h2>Dados da Consulta</h2>
+        <p><strong>Clínica:</strong> {{CLINICA}}</p>
+        <p><strong>Especialidade:</strong> {{ESPECIALIDADE}}</p>
+        <p><strong>Data e Hora:</strong> {{DATA_CONSULTA}} às {{HORA_CONSULTA}}</p>
+        <p><strong>Observação:</strong> {{OBSERVACAO}}</p>
+    </div>
+    <br>
+    <a href="/">← Fazer novo agendamento</a>
+</body>
+</html>

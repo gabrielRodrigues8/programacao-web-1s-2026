@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Agendamento</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; max-width: 800px; margin: auto; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
+        .full-width { grid-column: 1 / -1; }
+        .form-group { display: flex; flex-direction: column; }
+        input, select, textarea { padding: 8px; border: 1px solid #ccc; }
+        button { padding: 10px; cursor: pointer; margin-top: 20px; width: 100%; background: #e0e0e0;}
+    </style>
+</head>
+<body>
+    <h1>Agendamento</h1>
+    
+    {{MENSAGEM_ERRO}}
+    
+    <form method="POST" action="/agendamento">
+        <h2>Dados do paciente</h2>
+        <div class="grid">
+            <div class="form-group"><label>Nome</label><input type="text" name="nome"></div>
+            <div class="form-group"><label>Sobrenome</label><input type="text" name="sobrenome"></div>
+            <div class="form-group"><label>CPF</label><input type="text" name="cpf"></div>
+            <div class="form-group"><label>Data de nascimento</label><input type="date" name="dataNascimento"></div>
+            <div class="form-group"><label>Telefone</label><input type="text" name="telefone"></div>
+            <div class="form-group"><label>CEP</label><input type="text" name="cep"></div>
+            <div class="form-group full-width"><label>Endereço</label><input type="text" name="endereco"></div>
+        </div>
+
+        <h2>Dados da consulta</h2>
+        <div class="grid">
+            <div class="form-group"><label>Clínica</label>
+                <select name="clinica">
+                    <option value="">Selecione...</option>
+                    <option value="Clínica A">Clínica A</option>
+                    <option value="Clínica B">Clínica B</option>
+                </select>
+            </div>
+            <div class="form-group"><label>Especialidade</label>
+                <select name="especialidade">
+                    <option value="">Selecione...</option>
+                    <option value="Clínico Geral">Clínico Geral</option>
+                    <option value="Cardiologia">Cardiologia</option>
+                </select>
+            </div>
+            <div class="form-group"><label>Data</label><input type="date" name="dataConsulta"></div>
+            <div class="form-group"><label>Hora</label><input type="time" name="horaConsulta"></div>
+            <div class="form-group full-width"><label>Observação</label><textarea name="observacao" rows="4"></textarea></div>
+        </div>
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>
